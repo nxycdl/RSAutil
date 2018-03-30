@@ -1,0 +1,24 @@
+{
+  "name": "rsautil",
+  "version": "1.0.0",
+  "description": "nodjes 使用公钥加密数据，接受到后台数据使用公钥进行验证",
+  "main": "RSAUtils",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "RSA",
+    "Nodejs",
+    "JAVA"
+  ],
+  "author": "dl",
+  "license": "ISC",
+  "dependencies": {
+    "jsrsasign": "^8.0.7",
+    "node-rsa": "^0.4.2",
+    "request": "^2.85.0"
+  },
+  "devDependencies": {
+    "mocha": "^5.0.5"
+  }
+}
