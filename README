@@ -15,7 +15,7 @@ for more Information see test
 然后使用秘钥A对发起串进行加密得到密文 enB，将enA,和enB,同时post的JAVA的后台去，
 后台通过RSA的秘钥解密enA的到秘钥A ,然后通过秘钥A机密enB得到原始报文，业务处理完毕之后，
 通过秘钥A加密处理结果的到enC返回给客户端，客户端通过秘钥A解密enC，得到处理结果的明文；
-再次过程总参照了https://www.jianshu.com/p/7d126a2bbe29一文，
+再次过程总参照了https://www.jianshu.com/p/7d126a2bbe29
 加密api方面参照了https://code.google.com/archive/p/crypto-js/
 
 至于为什么使用RSA，又使用了AES
