@@ -9,3 +9,19 @@ node simpledemo
 
 for more Information see test
 
+第一版程序是使用npm里面的node-rsa里面的实现的发现在Rreact-native里面
+无法打包到app里面，所以修改成第二版
+第二版的实现见test/demo2里面； 主要使用RSA对AES对秘钥（A)进行加密的到enA，
+然后使用秘钥A对发起串进行加密得到密文 enB，将enA,和enB,同时post的JAVA的后台去，
+后台通过RSA的秘钥解密enA的到秘钥A ,然后通过秘钥A机密enB得到原始报文，业务处理完毕之后，
+通过秘钥A加密处理结果的到enC返回给客户端，客户端通过秘钥A解密enC，得到处理结果的明文；
+再次过程总参照了https://www.jianshu.com/p/7d126a2bbe29一文，
+加密api方面参照了https://code.google.com/archive/p/crypto-js/
+
+至于为什么使用RSA，又使用了AES
+第一方面由于RSA的最快速度慢于AES100倍
+第二方面RSA对待加密的字符串有长度限制，如果超过长度需要使用分段加密的方式。AES不存在这个问题。
+所以使用RSA加密了AES的秘钥，一般秘钥都比较短，AES加密报文，对实时性影响最小。
+
+
+里面有来回测试的多次demo ，只需要看test里面的demo 即可。
